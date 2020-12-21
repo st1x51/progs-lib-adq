@@ -136,19 +136,10 @@
 #define EF_RED  128
 
 // messages
-// Since BROADCAST is never used in QW 1.5, and MULTICAST is used instead,
-// just define BROADCAST as MULTICAST for QW 1.5
-#define MSG_BROADCAST  0
-#define MSG_ONE   1		// reliable to one (msg_entity)
-#define MSG_ALL   2		// reliable to all
-#define MSG_INIT  3		// write to the init string
-
-
-// message levels
-#define PRINT_LOW   0		// pickup messages
-#define PRINT_MEDIUM  1		// death messages
-#define PRINT_HIGH   2		// critical messages
-#define PRINT_CHAT   3		// also goes to chat console
+#define MSG_BROADCAST   0
+#define MSG_ONE   		1		// reliable to one (msg_entity)
+#define MSG_ALL   		2		// reliable to all
+#define MSG_INIT  		3		// write to the init string
 
 // multicast sets
 #define MULTICAST_ALL    0	// every client
@@ -172,18 +163,52 @@
 #define	SPAWNFLAG_NOT_DEATHMATCH	2048
 
 // protocol bytes
-#define SVC_TEMPENTITY 23
-#define SVC_KILLEDMONSTER 27
-#define SVC_FOUNDSECRET 28
-#define SVC_INTERMISSION 30
-#define SVC_FINALE 31
-#define SVC_CDTRACK 32
-#define SVC_SELLSCREEN 33
-
-#define SVC_SMALLKICK  34
-#define SVC_BIGKICK   35
-#define SVC_MUZZLEFLASH  39
-
+#define	SVC_BAD				 0
+#define	SVC_NOP				 1
+#define	SVC_DISCONNECT		 2
+#define	SVC_UPDATESTAT		 3
+#define	SVC_VERSION			 4
+#define	SVC_SETVIEW			 5
+#define	SVC_SOUND			 6
+#define	SVC_TIME			 7
+#define	SVC_PRINT			 8
+#define	SVC_STUFFTEXT		 9
+#define	SVC_SETANGLE		 10
+#define	SVC_SERVERINFO		 11
+#define	SVC_LIGHTSTYLE		 12
+#define	SVC_UPDATENAME		 13
+#define	SVC_UPDATEFRAGS		 14
+#define	SVC_CLIENTDATA		 15
+#define	SVC_STOPSOUND		 16
+#define	SVC_UPDATECOLORS 	 17
+#define	SVC_PARTICLE		 18
+#define	SVC_DAMAGE			 19
+#define	SVC_SPAWNSTATIC		 20
+#define	SVC_SPAWNBINARY		 21
+#define	SVC_SPAWNBASELINE 	 22
+#define	SVC_TEMPENTITY		 23
+#define	SVC_SETPAUSE		 24
+#define	SVC_SIGNONNUM		 25
+#define	SVC_CENTERPRINT		 26
+#define	SVC_KILLEDMONSTER	 27
+#define	SVC_FOUNDSECRET		 28
+#define	SVC_SPAWNSTATICSOUND 29	// 1998-08-08 Complete SVC list by Zhenga
+#define	SVC_INTERMISSION	 30
+#define	SVC_FINALE			 31
+#define	SVC_CDTRACK			 32
+#define	SVC_SELLSCREEN		 33
+#define	SVC_CUTSCENE		 34	// 1998-08-08 Complete SVC list by Zhenga
+//adq svc
+#define	SVC_SCREENSHAKE    	 35      //[float]amplitude [float]duration [float]frequency
+#define SVC_SCREENFADE		 36      //[float]duration [float]holdtime [short]flags [byte]r [byte]g [byte]b [byte]a
+#define SVC_ROOMTYPE         37      //[short]value
+#define SVC_BSPDECAL         38     //[string]name [coords]pos
+#define SVC_ADDANGLE	     39
+#define	SVC_SHOWLMP		     40	// [string] slotname [string] lmpfilename [coord] x [coord] y
+#define	SVC_HIDELMP		     41	// [string] slotname
+#define	SVC_SHOWSTRING		 42	
+#define	SVC_HIDESTRING		 43
+//adq svc
 
 #define TE_SPIKE   0
 #define TE_SUPERSPIKE  1
