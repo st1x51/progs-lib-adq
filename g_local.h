@@ -55,7 +55,7 @@ float           vectoyaw( vec3_t value1 );
 void            vectoangles( vec3_t value1, vec3_t ret );
 void            changeyaw( gedict_t * ent );
 void            makevectors( vec3_t vector );
-void            G_sprint( gedict_t * ed, int level, const char *fmt, ... );
+void            G_sprint( gedict_t * ed, const char *fmt, ... );
 void            G_bprint(const char *fmt, ... );
 void            G_centerprint( gedict_t * ed, const char *fmt, ... );
 void            G_dprint( const char *fmt, ... );

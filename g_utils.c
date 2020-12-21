@@ -278,7 +278,7 @@ void makevectors( vec3_t vector )
 print functions
 ==============
 */
-void G_sprint( gedict_t * ed, int level, const char *fmt, ... )
+void G_sprint( gedict_t * ed, const char *fmt, ... )
 {
 	va_list argptr;
 	char    text[1024];
@@ -287,7 +287,7 @@ void G_sprint( gedict_t * ed, int level, const char *fmt, ... )
 	vsprintf( text, fmt, argptr );
 	va_end( argptr );
 
-	trap_SPrint( NUM_FOR_EDICT( ed ), level, text );
+	trap_SPrint( NUM_FOR_EDICT( ed ), text );
 }
 
 void G_bprint(const char *fmt, ... )
