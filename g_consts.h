@@ -14,11 +14,13 @@
 #define FL_PARTIALGROUND 1024	// not all corners are valid
 #define FL_WATERJUMP 2048	// player jumping out of water
 #define FL_JUMPRELEASED 4096	// for jump debouncing
+#define FL_ALWAYSTHINK          8192
+#define FL_USERELEASED          16384
 
 // edict.movetype values
 #define MOVETYPE_NONE   0	// never moves
-//#define MOVETYPE_ANGLENOCLIP 1 
-//#define MOVETYPE_ANGLECLIP 2 
+#define MOVETYPE_ANGLENOCLIP 1 
+#define MOVETYPE_ANGLECLIP 2 
 #define MOVETYPE_WALK   3	// players only
 #define MOVETYPE_STEP   4	// discrete, not real time unless fall
 #define MOVETYPE_FLY   5
@@ -27,7 +29,9 @@
 #define MOVETYPE_NOCLIP   8
 #define MOVETYPE_FLYMISSILE  9	// fly with extra size against monsters
 #define MOVETYPE_BOUNCE   10
-#define MOVETYPE_BOUNCEMISSILE 11	// bounce with extra size
+//#define MOVETYPE_BOUNCEMISSILE 11	// bounce with extra size
+#define MOVETYPE_FOLLOW			12		// track movement of aiment
+#define MOVETYPE_COMPOUND		13	    // glue two entities together (simple movewith)
 
 // edict.solid values
 #define SOLID_NOT  0		// no interaction with other objects
@@ -99,8 +103,6 @@
 #define STATE_UP 2
 #define STATE_DOWN 3
 
-
-
 // sound channels
 // channel 0 never willingly overrides
 // other channels (1-7) allways override a playing sound on that channel
@@ -109,7 +111,6 @@
 #define CHAN_VOICE 2
 #define CHAN_ITEM 3
 #define CHAN_BODY 4
-#define CHAN_NO_PHS_ADD 8
 
 #define ATTN_NONE 0
 #define ATTN_NORM 1
@@ -130,26 +131,12 @@
 #define EF_MUZZLEFLASH 2
 #define EF_BRIGHTLIGHT 4
 #define EF_DIMLIGHT 8
-#define EF_FLAG1   16
-#define EF_FLAG2  32
-#define EF_BLUE   64
-#define EF_RED  128
 
 // messages
-#define MSG_BROADCAST   0
+#define MSG_BROADCAST   0		// unreliable to all
 #define MSG_ONE   		1		// reliable to one (msg_entity)
 #define MSG_ALL   		2		// reliable to all
 #define MSG_INIT  		3		// write to the init string
-
-// multicast sets
-#define MULTICAST_ALL    0	// every client
-#define MULTICAST_PHS    1	// within hearing
-#define MULTICAST_PVS    2	// within sight
-#define MULTICAST_ALL_R  3	// every client, reliable
-#define MULTICAST_PHS_R  4	// within hearing, reliable
-#define MULTICAST_PVS_R  5	// within sight, reliable
-
-
 
 #define AS_STRAIGHT 1
 #define AS_SLIDING 2
@@ -222,8 +209,6 @@
 #define TE_LIGHTNING3  9
 #define TE_LAVASPLASH  10
 #define TE_TELEPORT   11
-#define TE_BLOOD         12
-#define TE_LIGHTNINGBLOOD 13
 
 
 // multicast sets
