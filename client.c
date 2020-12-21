@@ -29,7 +29,7 @@ vec3_t          VEC_HULL2_MAX = { 32, 32, 64 };
 //for hl maps
 vec3_t          VEC_HULLHL_MIN = { -16, -16, -36 };
 vec3_t          VEC_HULLHL_MAX = { 16, 16, 36 };
-
+vec3_t			VEC_DEFAULT_VIEW_SIZE = {0, 0, 28};
 int             modelindex_player;
 
 /*
@@ -121,15 +121,14 @@ void PutClientInServer()
 	self->s.v.movetype = MOVETYPE_WALK;
 	self->s.v.flags = FL_CLIENT;
 	self->s.v.deadflag = DEAD_NO;
-// paustime is set by teleporters to keep the player from moving a while
 	spot = find( world, FOFS( s.v.classname ), "info_player_start" );
 	VectorCopy( spot->s.v.origin, self->s.v.origin );
-	self->s.v.origin[2] += 0;
+	self->s.v.origin[2] += 1;
 	VectorCopy( spot->s.v.angles, self->s.v.angles );
 	self->s.v.fixangle = true;
-// oh, this is a hack!
+	self->s.v.hull = 2;
 	setmodel( self, "progs/player.mdl" );
-	//modelindex_player = self->s.v.modelindex;
+	modelindex_player = self->s.v.modelindex;
 
 	setsize( self, PASSVEC3( VEC_HULLHL_MIN ), PASSVEC3( VEC_HULLHL_MAX ) );
 	SetVector( self->s.v.view_ofs, 0, 0, 28 );
