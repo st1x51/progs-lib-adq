@@ -261,8 +261,6 @@ void ClientDisconnect()
 {
 	G_bprint("%s left the game with %.0f frags\n", self->s.v.netname,
 		  self->s.v.frags );
-
-	sound( self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE );
 }
 
 ////////////////

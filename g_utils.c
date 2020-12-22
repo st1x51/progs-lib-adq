@@ -13,6 +13,10 @@ int NUM_FOR_EDICT( gedict_t * e )
 	return b;
 }
 
+float bound( float a, float b, float c )
+{
+	return ( a >= c ? a : b < a ? a : b > c ? c : b);
+}
 
 float g_random(  )
 {
@@ -22,6 +26,18 @@ float g_random(  )
 float crandom(  )
 {
 	return 2 * ( g_random(  ) - 0.5 );
+}
+
+int i_rnd( int from, int to )
+{
+	float r;
+
+	if ( from >= to )
+		return from;
+
+	r = (int)(from + (1.0 + to - from) * g_random());
+
+	return bound(from, r, to);
 }
 
 gedict_t *spawn(  )
