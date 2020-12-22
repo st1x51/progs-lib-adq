@@ -85,7 +85,6 @@ typedef enum
 	G_CHANGELEVEL,
 	G_LOGFRAG,
 	G_GETINFOKEY,
-	G_MULTICAST,
 	G_DISABLEUPDATES,
 	G_WRITEBYTE,     
 	G_WRITECHAR,     
@@ -128,17 +127,13 @@ typedef enum
 	G_conprint,
 	G_readcmd,
 	G_redirectcmd,
-	G_Add_Bot,
-	G_Remove_Bot,
-	G_SetBotUserInfo,
-	G_SetBotCMD,
 	G_QVMstrftime,
 	G_CMD_ARGS,
 	G_CMD_TOKENIZE,
 	g_strlcpy,
 	g_strlcat,
 	G_MAKEVECTORS,
-	G_NEXTCLIENT
+	G_NEXTCLIENT,
 } gameImport_t;
 
 // !!! new things comes to end of list !!!

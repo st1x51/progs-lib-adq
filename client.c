@@ -278,7 +278,6 @@ PlayerPreThink
 Called every frame before physics are run
 ================
 */
-
 void PlayerPreThink()
 {
 	WaterMove();

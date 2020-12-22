@@ -267,13 +267,6 @@ void trap_changelevel( char *name )
 	syscall( G_CHANGELEVEL, name );
 }
 
-int trap_multicast( float origin_x, float origin_y, float origin_z, int to )
-{
-	return syscall( G_MULTICAST, PASSFLOAT( origin_x), PASSFLOAT( origin_y),
-			PASSFLOAT( origin_z), to );
-}
-
-
 void trap_logfrag( int killer, int killee )
 {
 	syscall( G_LOGFRAG,  killer , killee  );
