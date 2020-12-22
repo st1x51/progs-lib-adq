@@ -110,12 +110,7 @@ qboolean        G_SpawnVector( const char *key, const char *defaultString, float
 void            SUB_Remove();
 void            SUB_Null();
 
-//world.c
-void            CopyToBodyQue( gedict_t * ent );
-
 // client.c
-extern float    intermission_running;
-extern float    intermission_exittime;
 extern int      modelindex_eyes, modelindex_player;
 
 void            SetChangeParms();
@@ -132,16 +127,6 @@ void            SpectatorConnect();
 void            SpectatorDisconnect();
 void            SpectatorThink();
 
-// weapons.c
-extern int      impulse;
-float           W_BestWeapon();
-void            W_Precache();
-void            W_SetCurrentAmmo();
-void            SpawnBlood( vec3_t, float );
-void            W_FireAxe();
-void            W_FireSpikes( float ox );
-void            W_FireLightning();
-
 //combat 
 extern gedict_t *damage_attacker, *damage_inflictor;
 void            T_Damage( gedict_t * targ, gedict_t * inflictor, gedict_t * attacker,
@@ -149,12 +134,3 @@ void            T_Damage( gedict_t * targ, gedict_t * inflictor, gedict_t * atta
 void            T_RadiusDamage( gedict_t * inflictor, gedict_t * attacker, float damage,
 				gedict_t * ignore, char *dtype );
 void            T_BeamDamage( gedict_t * attacker, float damage );
-
-//items
-void            DropQuad( float timeleft );
-void            DropRing( float timeleft );
-void            DropBackpack();
-
-//triggers.c
-void            spawn_tfog( vec3_t org );
-void            spawn_tdeath( vec3_t org, gedict_t * death_owner );
