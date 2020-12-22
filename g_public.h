@@ -134,6 +134,7 @@ typedef enum
 	g_strlcat,
 	G_MAKEVECTORS,
 	G_NEXTCLIENT,
+	G_GETSOUNDLEN
 } gameImport_t;
 
 // !!! new things comes to end of list !!!

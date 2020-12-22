@@ -111,3 +111,4 @@ void    trap_precache_vwep_model( int pos, char *name );
 int QVMstrftime( char *valbuff, int sizebuff, const char *fmt, int offset );
 
 void trap_makevectors( float *v );
+int trap_getsoundlen(char *name);

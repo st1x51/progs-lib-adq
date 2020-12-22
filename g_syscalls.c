@@ -410,3 +410,7 @@ gedict_t* trap_nextclient( gedict_t *v )
 {
 	return (gedict_t*)syscall( G_NEXTCLIENT, (int)v );
 }
+int trap_getsoundlen(char *name )
+{
+	return syscall( G_GETSOUNDLEN, name );
+}
